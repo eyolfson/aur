@@ -1,0 +1,30 @@
+pkgname=sabnzbd
+_pkgname=SABnzbd
+pkgver=0.7.16
+pkgrel=1
+pkgdesc="A web-interface based binary newsgrabber with NZB file support"
+url="http://www.sabnzbd.org"
+arch=('any')
+license=('GPL')
+depends=('curl' 'par2cmdline' 'python2' 'python2-cheetah' 'python2-yenc'
+         'sqlite' 'unrar' 'unzip')
+optdepends=('python2-feedparser: rss support'
+            'python2-pyopenssl: ssl support')
+source=("http://downloads.sourceforge.net/sabnzbdplus/${_pkgname}-${pkgver}-src.tar.gz"
+        "${pkgname}@.service")
+sha1sums=('6b15e7b86e6d1e9aa910b2af9d7a00f08749cb96'
+          'edcd4030931702d01fc5ed1331ec0ee930926a78')
+
+package() {
+    install -d "${pkgdir}/opt/${pkgname}"
+    cp -a "${srcdir}/${_pkgname}-${pkgver}/"* "${pkgdir}/opt/${pkgname}"
+
+    # Fix for issues with Python 3
+    find "${pkgdir}/opt/${pkgname}" -type f -exec sed -i 's/python/python2/g' {} \;
+    find "${pkgdir}/opt/${pkgname}" -type d -exec chmod 755 {} \;
+    find "${pkgdir}/opt/${pkgname}" -type f -exec chmod 644 {} \;
+    chmod 755 "${pkgdir}/opt/${pkgname}/${_pkgname}.py"
+    chmod 755 "${pkgdir}/opt/${pkgname}/Sample-PostProc.sh"
+
+    install -Dm644 "${srcdir}/${pkgname}@.service" "${pkgdir}/usr/lib/systemd/system/${pkgname}@.service"
+}
