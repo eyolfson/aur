@@ -1,0 +1,38 @@
+# Maintainer: Jon Eyolfson <jon@eyolfson.com>
+# Contributor: Roni Choudhury <aichoudh@gmail.com>
+
+pkgname=pin
+pkgver=2.13.r62732
+_pkgver=2.13-62732
+pkgrel=1
+pkgdesc="A tool for the dynamic instrumentation of programs"
+arch=('x86_64')
+url="http://www.pintool.org"
+license=('custom')
+groups=()
+depends=('gcc>=4.4.7' 'bash' 'lib32-gcc-libs>=4.4.7')
+options=('!strip')
+source=("http://software.intel.com/sites/landingpage/pintool/downloads/${pkgname}-${_pkgver}-gcc.4.4.7-linux.tar.gz"
+        "pin.sh")
+sha1sums=('f477e77b443594764f6d005d33933db87ac1f48c'
+          '3e3bd91e68c149a0ed36983a5256ac7ae350a7ad')
+
+package() {
+    cd "${srcdir}/${pkgname}-${_pkgver}-gcc.4.4.7-linux"
+
+    # Copy pin executables, etc. to the /opt/pin directory (because pin
+    # uses a non-standard FHS for its stuff).
+    mkdir -p ${pkgdir}/opt/pin
+    cp -a doc extras ia32 intel64 source ${pkgdir}/opt/pin
+    install -m 644 README ${pkgdir}/opt/pin
+    install pin ${pkgdir}/opt/pin
+
+    # Copy license documents to license directory.
+    mkdir -p ${pkgdir}/usr/share/licenses/pin
+    install -m 644 LICENSE ${pkgdir}/usr/share/licenses/pin
+
+    # Copy shell script for modifying path.
+    cd "$srcdir"
+    mkdir -p ${pkgdir}/etc/profile.d 
+    install pin.sh ${pkgdir}/etc/profile.d
+}
