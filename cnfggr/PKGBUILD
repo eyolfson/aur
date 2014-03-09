@@ -2,12 +2,13 @@
 
 pkgname=cnfggr
 pkgver=0.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A basic configuration helper"
 arch=('any')
 url="https://github.com/eyolfson/cnfggr/"
 license=('GPL3')
-depends=('pacman' 'python' 'python-setuptools')
+depends=('pacman' 'python')
+makedepends=('python-setuptools')
 source=("https://github.com/eyolfson/$pkgname/archive/v$pkgver.tar.gz")
 sha256sums=('9a84617254673623f454a15b74e9e33a5a8bd876a640264759a0e67d0f92b031')
 
