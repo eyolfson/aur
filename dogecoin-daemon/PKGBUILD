@@ -1,0 +1,30 @@
+# Maintainer: Dylan <dylan at hashflo dot net>
+
+pkgname='dogecoin-daemon'
+pkgdesc='Peer-to-peer network based digital currency (daemon)'
+pkgver=1.6
+pkgrel=1
+arch=('i686' 'x86_64')
+url="http://dogecoin.com/"
+license=('MIT')
+source=("https://github.com/dogecoin/dogecoin/archive/master-$pkgver.tar.gz"
+        "dogecoind@.service"
+)
+sha256sums=('SKIP'
+            '605b21bcb226663d33fa44f239939b67a5c3ee2eb3aa1eab1ccad28fca28b000')
+makedepends=('boost' 'miniupnpc')
+depends=(boost-libs miniupnpc openssl)
+conflicts=(dogecoin)
+
+build() {
+  cd "$srcdir/dogecoin-master-$pkgver"
+  make -f makefile.unix -C src CXXFLAGS="$CXXFLAGS" USE_UPNP=1
+}
+
+package() {
+  install -Dm644 dogecoind@.service "$pkgdir/usr/lib/systemd/system/dogecoind@.service"
+  cd "$srcdir/dogecoin-master-$pkgver"
+  install -Dm755 src/dogecoind "$pkgdir"/usr/bin/dogecoind
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}
+
