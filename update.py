@@ -17,7 +17,7 @@
 import os
 from subprocess import call
 
-skipped = {'packer', 'sabnzbd'}
+skipped = {'packer', 'oh-my-zsh-git', 'sabnzbd', 'sickbeard-master-git'}
 for d in os.listdir('.'):
     if not os.path.isdir(d):
         continue
