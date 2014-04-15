@@ -1,0 +1,41 @@
+# Maintainer: Åsmund Ervik <aaervik at gmail dot com>
+# Prev. maintainer: Patrice Peterson <runiq at archlinux dot us>
+# Inspiration: Michael Witten <mfwitten>
+# (Original) Inspiration: Gustavo Dutra <mechamo@gustavodutra.com>
+# Contributor: RunningDroid <rningdrd at tormail dot org>
+
+pkgname="pentadactyl-hg"
+_pkgname="pentadactyl"
+license=(MIT)
+pkgver=r7086.fc02f93102f5
+pkgver() {
+  cd "$srcdir/$_pkgname"
+  printf "r%s.%s" "$(hg identify -n)" "$(hg identify -i)"
+}
+pkgrel=1
+pkgdesc="Vim-like five-fingered interface for Firefox"
+arch=(i686 x86_64)
+url="http://dactyl.sourceforge.net/pentadactyl"
+depends=("firefox>=23.0")
+makedepends=("coreutils" "mercurial" "sh" "zip" "unzip")
+provides=("pentadactyl")
+conflicts=("pentadactyl")
+source=("$_pkgname::hg+https://dactyl.googlecode.com")
+md5sums=('SKIP')
+
+build() {
+  cd "$_pkgname"
+  sed -i 's/maxVersion="25/maxVersion="27/' pentadactyl/install.rdf
+  make -C pentadactyl xpi
+}
+
+package() {
+  cd "$_pkgname"
+  local _version_pentadactyl="$(awk -F 'em:version="|"' '/em:version/ {print $2; exit}' $srcdir/$_pkgname/pentadactyl/install.rdf)"
+  local _extension_id="$(awk -F 'em:id="|"' '/em:id/ {print $2; exit}' $srcdir/$_pkgname/pentadactyl/install.rdf)"
+  local _path_xpi="$srcdir/$_pkgname/downloads/pentadactyl-${_version_pentadactyl}.xpi"
+  local _path_install="$pkgdir/usr/lib/firefox/browser/extensions/$_extension_id"
+
+  install -d "$_path_install"
+  unzip -od "$_path_install" "$_path_xpi"
+}
