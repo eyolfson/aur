@@ -85,7 +85,7 @@ for pkg_dir, pkg_filename in pkgs_added:
         call(['repo-add', '-s', '-v', 'eyl.db.tar.gz', pkg_filename], cwd=aur_pkg_dir)
         call(['repo-add', '-s', '-v', '-f', 'eyl.files.tar.gz', pkg_filename], cwd=aur_pkg_dir)
     else:
-        path = os.path.join(aur_pkg_dir, pkg_filename)
+        path = '../any/' + pkg_filename
         sig_path = path + '.sig'
         for arch in ARCHS:
             aur_pkg_dir = os.path.join(AUR_DIR, arch)
