@@ -7,7 +7,7 @@
 pkgname="pentadactyl-hg"
 _pkgname="pentadactyl"
 license=(MIT)
-pkgver=r7086.fc02f93102f5
+pkgver=r7094.025b18cc985d
 pkgver() {
   cd "$srcdir/$_pkgname"
   printf "r%s.%s" "$(hg identify -n)" "$(hg identify -i)"
