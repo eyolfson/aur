@@ -99,6 +99,8 @@ for pkg_dir, pkg_filename in pkgs_added:
                  cwd=aur_pkg_dir)
             call(['repo-add', '-s', '-v', '-f', 'eyl.files.tar.gz',
                   pkg_filename], cwd=aur_pkg_dir)
-        
+    call(['ssh', 'site-eyl@eyl.io', 'aurcreateupdate', pkg_name,
+          '{}-{}'.format(pkg_ver, pkg_rel), pkg_arch])
+
 call(['fusermount', '-u', AUR_DIR])
 os.rmdir(AUR_DIR)
