@@ -1,0 +1,25 @@
+pkgname=vim-markdown-git
+pkgver=r113.5569885
+pkgrel=1
+pkgdesc='Syntax highlighting and matching rules for Markdown.'
+arch=('any')
+url="https://github.com/plasticboy/vim-markdown"
+license=('MIT')
+makedepends=('git')
+depends=('vim')
+conflicts=('vim-markdown')
+provides=('vim-markdown')
+source=("$pkgname"::'git://github.com/plasticboy/vim-markdown.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/$pkgname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+  cd "$srcdir/$pkgname"
+  install -D -m644 after/ftplugin/mkd.vim ${pkgdir}/usr/share/vim/vimfiles/after/ftplugin/mkd.vim
+  install -D -m644 ftdetect/mkd.vim ${pkgdir}/usr/share/vim/vimfiles/ftdetect/mkd.vim
+  install -D -m644 syntax/mkd.vim ${pkgdir}/usr/share/vim/vimfiles/syntax/mkd.vim
+}
