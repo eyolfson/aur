@@ -1,0 +1,29 @@
+# Maintainer: Jon Eyolfson <jon@eyl.io>
+
+pkgname=emacs-helm-ls-git-git
+pkgver=r79.b3835cd
+pkgrel=1
+pkgdesc="Incremental completion and selection narrowing framework for Emacs"
+url="https://github.com/emacs-helm/helm-ls-git"
+arch=('any')
+license=('GPL3')
+depends=('emacs' 'emacs-helm')
+makedepends=('git')
+source=("$pkgname::git://github.com/emacs-helm/helm-ls-git.git")
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/$pkgname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+  emacs -Q -batch -L /usr/share/emacs/site-lisp/helm -f batch-byte-compile \
+    "$srcdir/$pkgname/helm-ls-git.el"
+}
+
+package() {
+  cd "$srcdir/$pkgname"
+  install -d "$pkgdir/usr/share/emacs/site-lisp/helm-ls-git"
+  install -m644 helm* "$pkgdir/usr/share/emacs/site-lisp/helm-ls-git/"
+}
