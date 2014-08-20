@@ -32,6 +32,8 @@ for d in os.listdir('.'):
         call(['packer', '-G', d])
         call(['rm', '-f', '{}.tar.gz'.format(d)])
     if d.endswith('-git'):
+        if d == 'rust-git' or d == 'cargo-git':
+            continue
         call(['makepkg', '-o'], cwd=d)
         rc = call(['git', 'diff', '--exit-code'])
         if rc != 0:
