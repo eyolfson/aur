@@ -26,6 +26,13 @@ for d in os.listdir('.'):
         continue
     if d in skipped:
         continue
-    call(['rm', '-f', '-r', d])
-    call(['packer', '-G', d])
-    call(['rm', '-f', '{}.tar.gz'.format(d)])
+    packer_update = False
+    if packer_update:
+        call(['rm', '-f', '-r', d])
+        call(['packer', '-G', d])
+        call(['rm', '-f', '{}.tar.gz'.format(d)])
+    if d.endswith('-git'):
+        call(['makepkg', '-o'], cwd=d)
+        rc = call(['git', 'diff', '--exit-code'])
+        if rc != 0:
+            break
