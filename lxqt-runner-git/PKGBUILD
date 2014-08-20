@@ -2,7 +2,7 @@
 
 _pkgname=lxqt-runner
 pkgname=$_pkgname-git
-pkgver=0.7.0.5.g581b924
+pkgver=0.7.0.6.g930ac3c
 pkgrel=1
 pkgdesc="The LXQt application launcher"
 arch=("i686" "x86_64" "armv6h")
