@@ -1,5 +1,5 @@
 pkgname=vim-markdown-git
-pkgver=r113.5569885
+pkgver=r121.dc61d19
 pkgrel=1
 pkgdesc='Syntax highlighting and matching rules for Markdown.'
 arch=('any')
