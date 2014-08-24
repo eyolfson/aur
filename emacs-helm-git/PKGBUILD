@@ -2,7 +2,7 @@
 # Contributor: megadriver <megadriver at gmx dot com>
 
 pkgname=emacs-helm-git
-pkgver=1.6.3.25.gd81afed
+pkgver=1.6.3.31.gb27eec8
 pkgrel=1
 pkgdesc="Incremental completion and selection narrowing framework for Emacs"
 url="https://github.com/emacs-helm/helm"
