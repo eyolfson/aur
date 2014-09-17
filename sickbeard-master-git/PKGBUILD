@@ -1,7 +1,7 @@
 # Maintainer: Jon Eyolfson <jon@eyl.io>
 
 pkgname=sickbeard-master-git
-pkgver=r3833.e03081a
+pkgver=r3842.630fb45
 pkgrel=1
 pkgdesc="PVR & episode guide that downloads and manages all your TV shows"
 arch=('any')
