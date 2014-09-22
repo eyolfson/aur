@@ -2,7 +2,7 @@
 
 _pkgname=libqtxdg
 pkgname=$_pkgname-qt5-git
-pkgver=0.5.3.31.g28480fc
+pkgver=1.0.0.2.g456069a
 pkgrel=1
 pkgdesc="Library providing freedesktop.org specs implementations for Qt."
 arch=("i686" "x86_64" "armv6h")
