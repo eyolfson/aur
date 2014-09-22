@@ -2,7 +2,7 @@
 
 _pkgname=lxqt-desktop
 pkgname=$_pkgname-git
-pkgver=0.7.0.9.gf5489d5
+pkgver=0.7.0.15.gd559dfc
 pkgrel=1
 pkgdesc="The LXQt desktop"
 arch=("i686" "x86_64")
