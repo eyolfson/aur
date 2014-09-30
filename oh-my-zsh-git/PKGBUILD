@@ -2,7 +2,7 @@
 # Contributor: ThinCarrotShrimp <christoph.r.martin+arch at gmail dot com>
 
 pkgname=oh-my-zsh-git
-pkgver=r2667.1b7a3ea
+pkgver=r2774.96e4e5d
 pkgrel=1
 pkgdesc="A community-driven framework for managing your zsh configuration."
 arch=('any')
