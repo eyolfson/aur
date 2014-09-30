@@ -1,9 +1,9 @@
 # Maintainer: ava1ar <mail(at)ava1ar(dot)info>
 
 pkgbase=chromium-plugins
-pkgname=(chromium-libpdf chromium-pepper-flash)
-pkgdesc="Google Chrome's plugins for Chromium (libpdf and pepper-flash, stable versions)"
-pkgver=36.0.1985.143
+pkgname=(chromium-pepper-flash)
+pkgdesc="Google Chrome's plugins for Chromium (pepper-flash stable version)"
+pkgver=37.0.2062.120
 pkgrel=1
 epoch=1
 _verbld=${pkgver}-1
@@ -14,27 +14,17 @@ license=('custom:chrome')
 source=(license.html::http://www.google.com/chrome/intl/en/eula_text.html)
 sha1sums=('SKIP')
 if [ "$CARCH" == x86_64 ]; then
-	source+=(https://dl.google.com/linux/chrome/rpm/stable/x86_64/google-chrome-${_channel}-${_verbld}.x86_64.rpm)
-	sha1sums+=('7f47121c38c2051f7c7072f67701520582a998e9')
+	_arch=x86_64
+	sha1sums+=('74fdf78ca65f117987a43e71f896a8eb7605a6d2')
 elif [ "$CARCH" == i686 ]; then
-	source+=(https://dl.google.com/linux/chrome/rpm/stable/i386/google-chrome-${_channel}-${_verbld}.i386.rpm)
-	sha1sums+=('4ca7a54f6e8f5df061c6b18c06d6247303afcd06')
+	_arch=i386
+	sha1sums+=('e94917e2e47aa05c0c6764ff2e6a855324e64844')
 fi
-
-package_chromium-libpdf() {
-	pkgdesc="Google Chrome's PDF plugin for Chromium (stable version)"
-	conflicts=('chromium-libpdf-dev')
-	install=chromium-libpdf.install
-
-	install -d "${pkgdir}/usr/lib/chromium"
-	install -m644 opt/google/chrome/libpdf.so "${pkgdir}/usr/lib/chromium"
-	# License
-	install -Dm644 "${srcdir}/license.html" "${pkgdir}/usr/share/licenses/${pkgname}/license.html"
-}
+source+=(https://dl.google.com/linux/chrome/rpm/stable/${_arch}/google-chrome-${_channel}-${_verbld}.${_arch}.rpm)
 
 package_chromium-pepper-flash() {
 	pkgdesc="Google Chrome's Pepper Flash plugin for Chromium (stable version)"
-	pkgver=14.0.0.177
+	pkgver=15.0.0.152
 	conflicts=('chromium-pepper-flash-dev')
 	install=chromium-pepper-flash.install
 
