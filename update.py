@@ -17,8 +17,7 @@
 import os
 from subprocess import call
 
-skipped = {'packer', 'oh-my-zsh-git', 'sabnzbd', 'sickbeard-master-git',
-           'python2-pygments-style-solarized', 'pentadactyl-hg'}
+skipped = {'packer', 'sabnzbd', 'python2-pygments-style-solarized'}
 for d in os.listdir('.'):
     if not os.path.isdir(d):
         continue
@@ -26,11 +25,7 @@ for d in os.listdir('.'):
         continue
     if d in skipped:
         continue
-    packer_update = False
-    if packer_update:
-        call(['rm', '-f', '-r', d])
-        call(['packer', '-G', d])
-        call(['rm', '-f', '{}.tar.gz'.format(d)])
+    packer_update = True
     if d.endswith('-git'):
         if d == 'rust-git' or d == 'cargo-git':
             continue
@@ -38,3 +33,10 @@ for d in os.listdir('.'):
         rc = call(['git', 'diff', '--exit-code'])
         if rc != 0:
             break
+    elif packer_update:
+        call(['rm', '-f', '-r', d])
+        call(['packer', '-G', d])
+        call(['rm', '-f', '{}.tar.gz'.format(d)])
+        rc = call(['git', 'diff', '--exit-code'])
+        if rc != 0:
+            exit(0)
