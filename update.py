@@ -15,9 +15,12 @@
 # this program. If not, see <http://www.gnu.org/licenses/>.
 
 import os
+import sys
 from subprocess import call
 
 skipped = {'packer', 'sabnzbd', 'python2-pygments-style-solarized'}
+for arg in sys.argv[1:]:
+    skipped.add(arg)
 for d in os.listdir('.'):
     if not os.path.isdir(d):
         continue
