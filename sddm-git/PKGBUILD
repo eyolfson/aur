@@ -3,7 +3,7 @@
 
 _pkgbase="sddm"
 pkgname="$_pkgbase-git"
-pkgver=0.9.0.39.gef14018
+pkgver=0.9.0.44.g412462d
 pkgrel=1
 pkgdesc="The Simple Desktop Display Manager"
 arch=("i686" "x86_64")
