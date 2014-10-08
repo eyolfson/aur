@@ -3,7 +3,7 @@
 
 _pkgname=lxqt-admin
 pkgname=$_pkgname-git
-pkgver=13.342cf5a
+pkgver=14.e6f6576
 pkgrel=1
 pkgdesc="LXQt system administration"
 arch=("i686" "x86_64" "armv6h")
