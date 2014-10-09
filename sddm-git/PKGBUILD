@@ -3,7 +3,7 @@
 
 _pkgbase="sddm"
 pkgname="$_pkgbase-git"
-pkgver=0.9.0.45.g6a28c29
+pkgver=0.9.0.r46
 pkgrel=1
 pkgdesc="The Simple Desktop Display Manager"
 arch=("i686" "x86_64")
@@ -20,8 +20,8 @@ source=("git://github.com/sddm/$_pkgbase.git")
 sha256sums=("SKIP")
 
 pkgver() {
-	cd "$srcdir/$_pkgbase"
-	git describe --always | sed "s/^v//g" | sed "s/-/./g"
+    cd "$srcdir/$_pkgbase"
+    git describe | sed -r 's/^v//;s/([^-]*-g)/r\1/;s/-[^-]*$//;s/-/./g'
 }
 
 build() {
