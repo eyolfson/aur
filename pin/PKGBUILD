@@ -4,7 +4,7 @@
 pkgname=pin
 pkgver=2.14.r67254
 _pkgver=2.14-67254
-pkgrel=2
+pkgrel=3
 pkgdesc="A tool for the dynamic instrumentation of programs"
 arch=('x86_64')
 url="http://www.pintool.org"
@@ -33,6 +33,8 @@ package() {
     find "${pkgdir}/opt/pin" -name pinbin -type f -exec chmod +x {} \;
     find "${pkgdir}/opt/pin" -name xed -type f -exec chmod +x {} \;
     find "${pkgdir}/opt/pin" -name pindb -type f -exec chmod +x {} \;
+    find "${pkgdir}/opt/pin/source/tools/Utils" -name 'test*' -type f -exec chmod +x {} \;
+    find "${pkgdir}/opt/pin/source/tools/Utils" -name '*.py' -type f -exec chmod +x {} \;
 
     # Move LICENSE to the Arch location
     mkdir -p "${pkgdir}/usr/share/licenses/pin"
