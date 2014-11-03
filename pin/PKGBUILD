@@ -4,7 +4,7 @@
 pkgname=pin
 pkgver=2.14.r67254
 _pkgver=2.14-67254
-pkgrel=1
+pkgrel=2
 pkgdesc="A tool for the dynamic instrumentation of programs"
 arch=('x86_64')
 url="http://www.pintool.org"
@@ -15,7 +15,7 @@ options=('!strip')
 source=("http://software.intel.com/sites/landingpage/pintool/downloads/${pkgname}-${_pkgver}-gcc.4.4.7-linux.tar.gz"
         "pin.sh")
 sha1sums=('87f3e2fae333a4cb15871192dab6e2b4c36fa447'
-          '3e3bd91e68c149a0ed36983a5256ac7ae350a7ad')
+          '5cb4f1254fff3463c9ee3fa143ed80c5a8a5f99c')
 
 package() {
     cd "${srcdir}/${pkgname}-${_pkgver}-gcc.4.4.7-linux"
@@ -24,6 +24,8 @@ package() {
     # uses a non-standard FHS for its stuff).
     mkdir -p ${pkgdir}/opt/pin
     cp -a doc extras ia32 intel64 source ${pkgdir}/opt/pin
+    find "${pkgdir}/opt/pin" -type d -exec chmod 755 {} \;
+    find "${pkgdir}/opt/pin" -type f -exec chmod 644 {} \;
     install -m 644 README ${pkgdir}/opt/pin
     install pin ${pkgdir}/opt/pin
 
