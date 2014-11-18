@@ -1,6 +1,6 @@
 # Contributor: listx <linusarver <at> gmail <dot> com>
 pkgname=emacs-evil-git
-pkgver=20141117
+pkgver=20141118
 pkgrel=1
 _gitname="evil"
 _gitbranch="master"
