@@ -1,5 +1,5 @@
 pkgname=vim-markdown-git
-pkgver=r152.74c9c60
+pkgver=r154
 pkgrel=1
 pkgdesc='Syntax highlighting and matching rules for Markdown.'
 arch=('any')
@@ -14,7 +14,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/$pkgname"
-  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  printf "r%s" "$(git rev-list --count HEAD)"
 }
 
 package() {
