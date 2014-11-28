@@ -40,7 +40,7 @@ for d in os.listdir('.'):
         call(['rm', '-f', '-r', d])
         call(['packer', '-G', d])
         call(['rm', '-f', '{}.tar.gz'.format(d)])
-        call(['rm', '-f', '{}/.AURINFO'.format(d)])
+        call(['rm', '-f', '{}/.*'.format(d)])
         rc = call(['git', 'diff', '--exit-code'])
         if rc != 0:
             exit(0)
