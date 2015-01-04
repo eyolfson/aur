@@ -2,7 +2,7 @@
 # Uploader: xico
 # Request Changes: https://github.com/michaelsproul/rust-nightly-archlinux
 pkgname=cargo-nightly-bin
-pkgver=0.0.1_2015.01.01
+pkgver=0.0.1_2015.01.04
 pkgrel=1
 arch=('i686' 'x86_64')
 pkgdesc="Cargo downloads your Rust project's dependencies and compiles your project."
@@ -18,6 +18,7 @@ options=(staticlibs !strip)
 package() {
     cd cargo-nightly-${CARCH}-unknown-linux-gnu
     ./install.sh --prefix=$pkgdir/usr
-    # This will need updating imminently.
-    # rm -f "$pkgdir/usr/lib/cargo/cargo-manifest"
+
+    # remove manifest file referencing $pkgdir
+    rm -f "${pkgdir}/usr/lib/rustlib/manifest-cargo"
 }
