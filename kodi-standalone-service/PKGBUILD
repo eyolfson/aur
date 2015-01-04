@@ -7,22 +7,22 @@
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Maxime Gauduin <alucryd@gmail.com>
 
-pkgname=xbmc-standalone-service
-pkgver=1.3
+pkgname=kodi-standalone-service
+pkgver=1.7
 pkgrel=1
-pkgdesc="Systemd service and user to autostart xbmc at boot"
+pkgdesc="Systemd service and user to autostart kodi at boot"
 arch=('any')
-url="https://wiki.archlinux.org/index.php/Xbmc#Autostarting_at_boot"
+url="https://wiki.archlinux.org/index.php/Kodi#Kodi-standalone-service"
 license=('GPL')
-depends=('xbmc>=13.1-5' 'systemd' 'xorg-server' 'xorg-xinit')
+depends=('systemd' 'xorg-server' 'xorg-xinit' 'kodi')
+replaces=('xbmc-standalone-service')
 install=readme.install
 source=("https://github.com/graysky2/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('dce087ad4ffec928ddbe23c5dc4a16c79a57f92abec5974aa3d6b1b5b21d55cc')
+sha256sums=('dba1a356a452504dbcee0c6915565773d5e6a572c66d98d1461bc37b8ee60d5f')
 
 package() {
-	install -Dm644 "$srcdir/$pkgname-$pkgver/init/xbmc.service" "$pkgdir/usr/lib/systemd/system/xbmc.service"
-	install -Dm755 "$srcdir/$pkgname-$pkgver/common/xbmc-standalone2" "$pkgdir/usr/bin/xbmc-standalone2"
-
-	install -dm 700 "$pkgdir"/var/lib/xbmc
-	chown 420:420 "$pkgdir"/var/lib/xbmc
+	install -Dm644 "$srcdir/$pkgname-$pkgver/init/kodi.service" \
+		"$pkgdir/usr/lib/systemd/system/kodi.service"
+	install -dm 700 "$pkgdir"/var/lib/kodi
+	chown 420:420 "$pkgdir"/var/lib/kodi
 }
