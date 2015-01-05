@@ -1,7 +1,7 @@
 # Maintainer: Michael Sproul <micsproul@gmail.com>
 # Request Changes: https://github.com/michaelsproul/rust-nightly-archlinux
 pkgname=rust-nightly-bin
-pkgver=0.13.0_2015.01.04
+pkgver=0.13.0_2015.01.05
 pkgrel=1
 arch=('i686' 'x86_64')
 pkgdesc='A safe, concurrent, practical language from Mozilla.'
@@ -24,11 +24,6 @@ package() {
     # Rust, Cargo and Documentation.
     cd rust-nightly-${CARCH}-unknown-linux-gnu
     ./install.sh --prefix=${pkgdir}${INSTALL_DIR} --mandir=${pkgdir}${MAN_DIR}
-
-    # Fix doc permissions.
-    local DOC_DIR=${pkgdir}${INSTALL_DIR}/share/doc/rust/html
-    find ${DOC_DIR} -type f -exec chmod 644 {} ';'
-    find ${DOC_DIR} -type d -exec chmod 775 {} ';'
 
     # Establish .rs MIME type association.
     mkdir -p "${pkgdir}/usr/share/mime/packages"
