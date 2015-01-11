@@ -1,7 +1,7 @@
 # Maintainer: Jon Eyolfson <jon@eyl.io>
 
 pkgname=emacs-theme-solarized-git
-pkgver=r321.715b3f6
+pkgver=r326.31a62c7
 pkgrel=1
 pkgdesc="Emacs highlighting using Ethan Schoonover’s Solarized color scheme"
 arch=('any')
