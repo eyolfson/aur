@@ -29,7 +29,7 @@ for d in os.listdir('.'):
     if d in skipped:
         continue
     packer_update = True
-    if d.endswith('-git') or d.endswith('-hg'):
+    if d.endswith('-git') or d.endswith('-hg') or d == 'emacs-rust-mode':
         if d == 'rust-git' or d == 'cargo-git':
             continue
         call(['makepkg', '-o'], cwd=d)
