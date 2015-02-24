@@ -1,7 +1,7 @@
 # Maintainer: Jon Eyolfson <jon@eyl.io>
 
 pkgname=firefox-pentadactyl-hg
-pkgver=r7147
+pkgver=r7150
 pkgrel=1
 pkgdesc="plugin for firefox designed to make browsing more efficient"
 arch=('any')
