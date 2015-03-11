@@ -1,7 +1,7 @@
 # Maintainer: Jon Eyolfson <jon@eyl.io>
 
 pkgname=emacs-theme-solarized-git
-pkgver=r326.31a62c7
+pkgver=r328
 pkgrel=1
 pkgdesc="Emacs highlighting using Ethan Schoonover’s Solarized color scheme"
 arch=('any')
@@ -17,7 +17,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/$pkgname"
-  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  printf "r%s" "$(git rev-list --count HEAD)"
 }
 
 package() {
