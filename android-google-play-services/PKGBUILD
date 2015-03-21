@@ -1,7 +1,7 @@
 pkgname=android-google-play-services
 pkgver=r23
 _build=7095000
-pkgrel=1
+pkgrel=3
 pkgdesc='Google Play Services client library and sample code'
 arch=('any')
 url="https://developers.google.com/android/google-play-services/"
@@ -9,7 +9,7 @@ license=('custom')
 options=('!strip')
 source=("http://dl.google.com/android/repository/google_play_services_${_build}_${pkgver}.zip" "source.properties")
 sha1sums=('987520c73e66d58fe3811f542366369ddd79e733'
-          '821face3c158f8797c9e20e90306220881875853')
+          '764a1d373c96c226782b4023da85c3734481f38f')
 
 package() {
   mkdir -p "${pkgdir}/opt/android-sdk/extras/google/"
