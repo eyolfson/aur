@@ -1,5 +1,5 @@
 pkgname=emacs-evil-git
-pkgver=r1566
+pkgver=r1572
 pkgrel=1
 pkgdesc="An extensible vi layer for Emacs"
 arch=('any')
