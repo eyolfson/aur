@@ -1,7 +1,7 @@
 # Maintainer: Jon Eyolfson <jon@eyl.io>
 
 pkgname=emacs-helm-ls-git-git
-pkgver=r128
+pkgver=r129
 pkgrel=1
 pkgdesc="Incremental completion and selection narrowing framework for Emacs"
 url="https://github.com/emacs-helm/helm-ls-git"
