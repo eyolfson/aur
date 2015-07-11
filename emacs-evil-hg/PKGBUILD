@@ -1,20 +1,20 @@
-pkgname=emacs-evil-git
-pkgver=r1599
+pkgname=emacs-evil-hg
+pkgver=r1638
 pkgrel=1
 pkgdesc="An extensible vi layer for Emacs"
 arch=('any')
 url="https://gitorious.org/evil/pages/Home"
 license=('GPLv2')
-makedepends=('git')
+makedepends=('mercurial')
 depends=('emacs' 'emacs-undo-tree')
-conflicts=('emacs-evil')
+conflicts=('emacs-evil' 'emacs-evil-git')
 provides=('emacs-evil')
-source=("$pkgname"::'git+https://gitorious.org/evil/evil.git')
+source=("$pkgname"::'hg+https://bitbucket.org/lyro/evil')
 sha256sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/$pkgname"
-  printf "r%s" "$(git rev-list --count HEAD)"
+  printf "r%s" "$(hg identify -n)"
 }
 
 build() {
