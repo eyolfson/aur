@@ -2,13 +2,14 @@
 
 pkgname=firefox-pentadactyl
 pkgver=r7162
-pkgrel=1
+pkgrel=2
 pkgdesc="plugin for firefox designed to make browsing more efficient"
 arch=('any')
 url="http://5digits.org/pentadactyl/"
 license=('MIT')
 depends=("firefox")
-makedepends=('unzip')
+makedepends=('unzip' 'git')
+provides=('firefox-pentadactyl')
 conflicts=('firefox-pentadactyl-hg')
 source=("$pkgname::git+https://github.com/5digits/dactyl.git")
 md5sums=('SKIP')
