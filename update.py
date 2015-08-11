@@ -18,7 +18,7 @@ import os
 import sys
 from subprocess import call
 
-skipped = {'packer', 'sabnzbd', 'python2-pygments-style-solarized', 'firefox-pentadactyl', 'firefox-ublock-origin'}
+skipped = {'packer', 'sabnzbd', 'python2-pygments-style-solarized', 'firefox-pentadactyl', 'firefox-ublock-origin', 'android-platform-20'}
 for arg in sys.argv[1:]:
     skipped.add(arg)
 for d in os.listdir('.'):
