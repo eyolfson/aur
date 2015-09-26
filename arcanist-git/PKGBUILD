@@ -4,7 +4,7 @@
 
 _pkgname=arcanist
 pkgname=$_pkgname-git
-pkgver=6.r998.g9c056c5
+pkgver=6.r999.ge8a0eba
 pkgrel=1
 pkgdesc='The command-line frontend to Phabricator, commonly called arc'
 arch=('any')
