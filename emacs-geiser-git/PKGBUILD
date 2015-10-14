@@ -1,7 +1,7 @@
 # Maintainer: Jon Eyolfson <jon@eyl.io>
 
 pkgname=emacs-geiser-git
-pkgver=0.8.r1
+pkgver=0.8.1.r0
 pkgrel=1
 pkgdesc="A major mode for Emacs-Scheme interaction"
 url="http://www.nongnu.org/geiser/"
