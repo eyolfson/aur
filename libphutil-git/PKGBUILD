@@ -4,7 +4,7 @@
 
 _pkgname=libphutil
 pkgname=$_pkgname-git
-pkgver=5.r903.g59f5a8d
+pkgver=5.r906.g69b641e
 pkgrel=1
 pkgdesc='Library system which organizes PHP classes and functions into modules'
 arch=('any')
