@@ -32,7 +32,7 @@ for d in os.listdir('.'):
     if d.endswith('-git') or d.endswith('-hg') or d == 'emacs-rust-mode':
         if d == 'rust-git' or d == 'cargo-git':
             continue
-        call(['makepkg', '-o'], cwd=d)
+        call(['makepkg', '-o', '-d'], cwd=d)
         rc = call(['git', 'diff', '--exit-code'])
         if rc != 0:
             break
