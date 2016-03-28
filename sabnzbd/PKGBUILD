@@ -1,6 +1,6 @@
 pkgname=sabnzbd
 _pkgname=SABnzbd
-pkgver=0.7.20
+pkgver=1.0.0
 pkgrel=1
 pkgdesc="A web-interface based binary newsgrabber with NZB file support"
 url="http://www.sabnzbd.org"
@@ -12,19 +12,18 @@ optdepends=('python2-feedparser: rss support'
             'python2-pyopenssl: ssl support')
 source=("http://downloads.sourceforge.net/sabnzbdplus/${_pkgname}-${pkgver}-src.tar.gz"
         "${pkgname}@.service")
-sha1sums=('6cd46350b435a19de8d53eda35a75e8230f2260e'
-          'edcd4030931702d01fc5ed1331ec0ee930926a78')
+sha256sums=('7573dfafd6f3b51e899f47436de0e0b3d8e83a568e2a6f0f3da0aaa1f3d4cfaa'
+            '5a2ca03b639d64250113a5e04e3884e2628cc4f3c23b42a39d15e69ec3261507')
 
 package() {
-    install -d "${pkgdir}/opt/${pkgname}"
-    cp -a "${srcdir}/${_pkgname}-${pkgver}/"* "${pkgdir}/opt/${pkgname}"
+  install -d "${pkgdir}/opt/${pkgname}"
+  cp -a "${srcdir}/${_pkgname}-${pkgver}/"* "${pkgdir}/opt/${pkgname}"
 
-    # Fix for issues with Python 3
-    find "${pkgdir}/opt/${pkgname}" -type f -exec sed -i 's/python/python2/g' {} \;
-    find "${pkgdir}/opt/${pkgname}" -type d -exec chmod 755 {} \;
-    find "${pkgdir}/opt/${pkgname}" -type f -exec chmod 644 {} \;
-    chmod 755 "${pkgdir}/opt/${pkgname}/${_pkgname}.py"
-    chmod 755 "${pkgdir}/opt/${pkgname}/Sample-PostProc.sh"
+  # Fix for issues with Python 3
+  find "${pkgdir}/opt/${pkgname}" -type f -exec sed -i 's/python/python2/g' {} \;
+  find "${pkgdir}/opt/${pkgname}" -type d -exec chmod 755 {} \;
+  find "${pkgdir}/opt/${pkgname}" -type f -exec chmod 644 {} \;
+  chmod 755 "${pkgdir}/opt/${pkgname}/${_pkgname}.py"
 
-    install -Dm644 "${srcdir}/${pkgname}@.service" "${pkgdir}/usr/lib/systemd/system/${pkgname}@.service"
+  install -Dm644 "${srcdir}/${pkgname}@.service" "${pkgdir}/usr/lib/systemd/system/${pkgname}@.service"
 }
