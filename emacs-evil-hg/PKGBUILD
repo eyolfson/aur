@@ -1,5 +1,5 @@
 pkgname=emacs-evil-hg
-pkgver=r1801
+pkgver=r1806
 pkgrel=1
 pkgdesc="An extensible vi layer for Emacs"
 arch=('any')
