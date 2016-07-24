@@ -4,3 +4,6 @@
 [submodule "aur.archlinux.org/emacs-rust-mode"]
 	path = aur.archlinux.org/emacs-rust-mode
 	url = git+ssh://aur@aur.archlinux.org/emacs-rust-mode.git
+[submodule "aur.archlinux.org/emacs-undo-tree"]
+	path = aur.archlinux.org/emacs-undo-tree
+	url = git+ssh://aur@aur.archlinux.org/emacs-undo-tree.git
