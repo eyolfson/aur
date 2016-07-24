@@ -32,6 +32,8 @@ for pkg_name in os.listdir(BASE_DIR):
         continue
     if pkg_name.startswith('.'):
         continue
+    if pkg_name == 'aur.archlinux.org':
+        continue
     pkg_filename = None
     for filename in os.listdir(pkg_dir):
         if filename.endswith(PKG_EXTENSION):

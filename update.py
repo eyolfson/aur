@@ -26,6 +26,8 @@ for d in os.listdir('.'):
         continue
     if d.startswith('.'):
         continue
+    if d == 'aur.archlinux.org':
+        continue
     if d in skipped:
         continue
     packer_update = True

@@ -1,0 +1,3 @@
+[submodule "aur.archlinux.org/emacs-evil"]
+	path = aur.archlinux.org/emacs-evil
+	url = git+ssh://aur@aur.archlinux.org/emacs-evil.git
