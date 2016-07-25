@@ -10,3 +10,6 @@
 [submodule "aur.archlinux.org/emacs-yasnippet"]
 	path = aur.archlinux.org/emacs-yasnippet
 	url = git+ssh://aur@aur.archlinux.org/emacs-yasnippet.git
+[submodule "aur.archlinux.org/dynamorio"]
+	path = aur.archlinux.org/dynamorio
+	url = git+ssh://aur@aur.archlinux.org/dynamorio.git
