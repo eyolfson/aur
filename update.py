@@ -18,7 +18,10 @@ import os
 import sys
 from subprocess import call
 
-skipped = {'packer', 'sabnzbd', 'python2-pygments-style-solarized', 'firefox-pentadactyl', 'firefox-ublock-origin', 'android-platform-20'}
+skipped = {'sabnzbd', 'python2-pygments-style-solarized', 'firefox-pentadactyl', 'firefox-ublock-origin'}
+
+vcs_package = {'sickbeard', 'oh-my-zsh', 'emacs-rust-mode', 'packer'}
+
 for arg in sys.argv[1:]:
     skipped.add(arg)
 for d in os.listdir('.'):
@@ -31,9 +34,7 @@ for d in os.listdir('.'):
     if d in skipped:
         continue
     packer_update = True
-    if d.endswith('-git') or d.endswith('-hg') or d == 'emacs-rust-mode' or d == 'sickbeard':
-        if d == 'rust-git' or d == 'cargo-git':
-            continue
+    if d.endswith('-git') or d.endswith('-hg') or d in vcs_package:
         call(['makepkg', '-o', '-d'], cwd=d)
         rc = call(['git', 'diff', '--exit-code'])
         if rc != 0:
@@ -44,6 +45,7 @@ for d in os.listdir('.'):
         call(['rm', '-f', '{}.tar.gz'.format(d)])
         call(['rm', '-f', '{}/.AURINFO'.format(d)])
         call(['rm', '-f', '{}/.SRCINFO'.format(d)])
+        call(['rm', '-f', '{}/MKPKG'.format(d)])
         rc = call(['git', 'diff', '--exit-code'])
         if rc != 0:
             exit(0)
