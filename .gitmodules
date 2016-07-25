@@ -16,3 +16,6 @@
 [submodule "aur.archlinux.org/pin"]
 	path = aur.archlinux.org/pin
 	url = git+ssh://aur@aur.archlinux.org/pin.git
+[submodule "aur.archlinux.org/emacs-helm"]
+	path = aur.archlinux.org/emacs-helm
+	url = git+ssh://aur@aur.archlinux.org/emacs-helm.git
