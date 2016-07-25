@@ -2,7 +2,7 @@
 # Contributor: Gilrain <pierre.buard+aur gmail com>
 # Contributor: bruenig
 pkgname=packer
-pkgver=20150808
+pkgver=20160325
 pkgrel=1
 pkgdesc="Bash wrapper for pacman and aur"
 url="http://github.com/keenerd/packer"
