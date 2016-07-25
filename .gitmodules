@@ -13,3 +13,6 @@
 [submodule "aur.archlinux.org/dynamorio"]
 	path = aur.archlinux.org/dynamorio
 	url = git+ssh://aur@aur.archlinux.org/dynamorio.git
+[submodule "aur.archlinux.org/pin"]
+	path = aur.archlinux.org/pin
+	url = git+ssh://aur@aur.archlinux.org/pin.git
