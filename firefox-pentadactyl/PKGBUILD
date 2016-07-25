@@ -1,14 +1,14 @@
 # Maintainer: Jon Eyolfson <jon@eyl.io>
 
 pkgname=firefox-pentadactyl
-pkgver=r7171
+pkgver=r7234
 pkgrel=1
 pkgdesc="plugin for firefox designed to make browsing more efficient"
 arch=('any')
 url="http://5digits.org/pentadactyl/"
 license=('MIT')
 depends=("firefox")
-makedepends=('unzip' 'git')
+makedepends=('zip' 'git')
 provides=('firefox-pentadactyl')
 conflicts=('firefox-pentadactyl-hg')
 source=("$pkgname::git+https://github.com/5digits/dactyl.git")
