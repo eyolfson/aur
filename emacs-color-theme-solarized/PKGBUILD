@@ -1,6 +1,6 @@
 # Maintainer: Jon Eyolfson <jon@eyl.io>
 
-pkgname=emacs-theme-solarized-git
+pkgname=emacs-color-theme-solarized
 pkgver=r373
 pkgrel=1
 pkgdesc="Emacs highlighting using Ethan Schoonover’s Solarized color scheme"
@@ -9,8 +9,6 @@ url="https://github.com/sellout/emacs-color-theme-solarized/"
 license=('MIT')
 depends=('emacs')
 makedepends=('git')
-conflicts=('emacs-theme-solarized')
-provides=('emacs-theme-solarized')
 install="$pkgname.install"
 source=("$pkgname"::'git://github.com/sellout/emacs-color-theme-solarized.git')
 sha256sums=('SKIP')
