@@ -10,5 +10,4 @@ If you would like to use this repository, add the following to `/etc/pacman.conf
     SigLevel = Required
     Server = https://eyl.io/media/aur/$arch
 
-All packages are signed with 0xD660A1C7.
-
+All packages are signed with 0x4D47368BD660A1C7.
