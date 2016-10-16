@@ -1,6 +1,6 @@
 pkgname=sabnzbd
 _pkgname=SABnzbd
-pkgver=1.0.3
+pkgver=1.1.0
 pkgrel=1
 pkgdesc="A web-interface based binary newsgrabber with NZB file support"
 url="http://www.sabnzbd.org"
@@ -12,7 +12,7 @@ optdepends=('python2-feedparser: rss support'
             'python2-pyopenssl: ssl support')
 source=("http://downloads.sourceforge.net/sabnzbdplus/${_pkgname}-${pkgver}-src.tar.gz"
         "${pkgname}@.service")
-sha256sums=('cf87d3f17fc03e8b3a4b3010261115c2ad7e2f773b5ede95a80025b340dbbd35'
+sha256sums=('3e86a897dea1c276c54ee38667a980f644f16d57df75612fe9eefa84b339ce9a'
             '5a2ca03b639d64250113a5e04e3884e2628cc4f3c23b42a39d15e69ec3261507')
 
 package() {
