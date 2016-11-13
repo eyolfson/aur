@@ -11,3 +11,5 @@ If you would like to use this repository, add the following to `/etc/pacman.conf
     Server = https://eyl.io/media/aur/$arch
 
 All packages are signed with 0x4D47368BD660A1C7.
+
+There is also a [web interface](https://eyl.io/aur/).
