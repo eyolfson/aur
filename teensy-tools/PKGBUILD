@@ -1,0 +1,26 @@
+# Maintainer: Jon Eyolfson <jon@eyl.io>
+pkgname=teensy-tools
+pkgver=2.1
+pkgrel=1
+pkgdesc="Tools for Teensy development"
+arch=('i686' 'x86_64')
+url="https://www.pjrc.com/teensy/loader_cli.html"
+license=('GPLv3')
+depends=('avr-binutils' 'avr-gcc' 'avr-libc' 'libusb-compat')
+makedepends=()
+optdepends=()
+source=("https://github.com/PaulStoffregen/teensy_loader_cli/archive/$pkgver.tar.gz"
+        "49-teensy.rules")
+sha256sums=("5c36fe45b9a3a71ac38848b076cd692bf7ca8826a69941c249daac3a1d95e388"
+            "9d1f8d89ea81bedbc1eadf535d5c0b1403e369917099b820072939e4d33ca800")
+
+build() {
+	cd "teensy_loader_cli-$pkgver"
+	make
+}
+
+package() {
+	cd "teensy_loader_cli-$pkgver"
+  install -Dm755 teensy_loader_cli "$pkgdir/usr/bin/teensy_loader_cli"
+  install -Dm644 "$srcdir/49-teensy.rules" "$pkgdir/etc/udev/rules.d/49-teensy.rules"
+}
