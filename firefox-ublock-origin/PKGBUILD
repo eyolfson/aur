@@ -1,7 +1,7 @@
 # Maintainer: Jon Eyolfson <jon@eyl.io>
 
 pkgname=firefox-ublock-origin
-pkgver=1.9.16
+pkgver=1.10.0
 pkgrel=1
 pkgdesc="An efficient blocker for Firefox"
 url="https://github.com/gorhill/uBlock"
@@ -12,7 +12,7 @@ depends=("firefox")
 makedepends=('unzip')
 noextract=("uBlock0.firefox.xpi")
 source=("https://github.com/gorhill/uBlock/releases/download/$pkgver/uBlock0.firefox.xpi")
-sha256sums=('51ec9130e83302a7f181cead46fdc9850123e89270ee1de65db2921df76bb61a')
+sha256sums=('861b7c90af5bee7fd7a1ea5de97f2354c5a13bce4139e83ac2b8768d92d24a8d')
 
 package() {
   cd $srcdir
