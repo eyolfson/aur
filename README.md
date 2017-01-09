@@ -1,6 +1,6 @@
-# eyl Arch Linux AUR
+# eyl AUR
 
-A personal Arch user repository
+A personal Arch Linux User Repository
 
 ## Usage
 
