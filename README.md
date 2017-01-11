@@ -2,6 +2,10 @@
 
 A personal Arch Linux User Repository
 
+## Description
+
+Most packages match up with the ones in the offical AUR.
+
 ## Usage
 
 If you would like to use this repository, add the following to `/etc/pacman.conf`:
