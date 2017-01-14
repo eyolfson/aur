@@ -1,28 +1,18 @@
-# Maintainer: Jon Eyolfson <jon@eyl.io>
+# Maintainer: Daniel M. Capella <polyzen@archlinux.info>
 
 pkgname=firefox-ublock-origin
 pkgver=1.10.4
 pkgrel=1
-pkgdesc="An efficient blocker for Firefox"
-url="https://github.com/gorhill/uBlock"
+pkgdesc='An efficient blocker add-on for various browsers. Fast, potent, and lean.'
+url=https://github.com/gorhill/uBlock
 arch=('any')
-license=('GPLv3')
-groups=('firefox-addons')
-depends=("firefox")
-makedepends=('unzip')
-noextract=("uBlock0.firefox.xpi")
-source=("https://github.com/gorhill/uBlock/releases/download/$pkgver/uBlock0.firefox.xpi")
-sha256sums=('ed3183f5d4106468339fe3922a3553757a98a655390f4c8e170b41848a5c27b9')
+license=('GPL3')
+source=("https://addons.cdn.mozilla.net/user-media/addons/607454/ublock_origin-$pkgver-an+fx+sm+tb.xpi")
+noextract=("${source##*/}")
+sha512sums=('918fc3f057abf0a6b96cdc42ba840c57f2409fb4e8160b36f2612b0c0e5c093e120c07f70b92aa10b82d69f81ef69450f05ccfa872bcf3050a3b880fa88c45a9')
 
 package() {
-  cd $srcdir
-  unzip uBlock0.firefox.xpi
-  local emid="uBlock0@raymondhill.net"
-  local dstdir=$pkgdir/usr/lib/firefox/browser/extensions/${emid}
-  [ -n ${emid} ] || return 1
-  install -d $dstdir
-  cp -R * $dstdir
-  rm $dstdir/*.xpi
-  find $pkgdir -type d -exec chmod 0755 {} \;
-  find $pkgdir -type f -exec chmod 0644 {} \;
+  install -Dm644 "${source##*/}" "$pkgdir"/usr/lib/firefox/browser/extensions/uBlock0@raymondhill.net.xpi
 }
+
+# vim:set ts=2 sw=2 et:
