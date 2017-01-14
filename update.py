@@ -18,7 +18,7 @@ import os
 import sys
 from subprocess import call
 
-skipped = {'sabnzbd', 'python2-pygments-style-solarized', 'eyl-launcher', 'teensy-tools'}
+skipped = {'sabnzbd', 'python2-pygments-style-solarized', 'eyl-launcher', 'teensy-tools', 'emacs-powerline'}
 
 vcs_package = {'sickbeard', 'oh-my-zsh', 'emacs-rust-mode', 'packer', 'firefox-pentadactyl', 'emacs-color-theme-solarized', 'prezto'}
 
