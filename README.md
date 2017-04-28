@@ -5,7 +5,10 @@ A personal Arch Linux User Repository
 ## Description
 
 Most packages match up with the ones in the offical AUR. Some are stripped down
-versions for my own use. I have a few official AUR packages.
+versions for my own use. I have a few official AUR packages including:
+
+- `emacs-evil`
+- `emacs-undo-tree`
 
 ## Usage
 
