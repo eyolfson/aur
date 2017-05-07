@@ -11,6 +11,7 @@ versions for my own use. I have a few official AUR packages including:
 - `emacs-helm`
 - `emacs-rust-mode`
 - `emacs-undo-tree`
+- `pin`
 
 ## Usage
 
