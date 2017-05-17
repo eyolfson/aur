@@ -7,6 +7,7 @@ A personal Arch Linux User Repository
 Most packages match up with the ones in the offical AUR. Some are stripped down
 versions for my own use. I have a few official AUR packages including:
 
+- `dynamorio`
 - `emacs-evil`
 - `emacs-helm`
 - `emacs-rust-mode`
