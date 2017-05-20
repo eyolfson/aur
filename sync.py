@@ -84,7 +84,7 @@ for pkg_dir, pkg_filename in pkgs_added:
     print('Moving', pkg_sig_path)
     shutil.move(pkg_sig_path, aur_pkg_dir)
     if pkg_arch != 'any':
-        call(['repo-add', '-s', '-v', 'eyl.db.tar.gz', pkg_filename], cwd=aur_pkg_dir)
+        call(['repo-add', '-s', '-v', 'eyl.db.tar.xz', pkg_filename], cwd=aur_pkg_dir)
     else:
         path = '../any/' + pkg_filename
         sig_path = path + '.sig'
@@ -96,7 +96,7 @@ for pkg_dir, pkg_filename in pkgs_added:
             os.symlink(path, aur_pkg_path)
             print('Symlinking', aur_pkg_sig_path)
             os.symlink(sig_path, aur_pkg_sig_path)
-            call(['repo-add', '-s', '-v', 'eyl.db.tar.gz', pkg_filename],
+            call(['repo-add', '-s', '-v', 'eyl.db.tar.xz', pkg_filename],
                  cwd=aur_pkg_dir)
     call(['ssh', 'site-eyl@eyl.io', 'aurcreateupdate', pkg_name,
           '{}-{}'.format(pkg_ver, pkg_rel), pkg_arch])
