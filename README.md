@@ -28,4 +28,4 @@ following command:
 
     pacman-key --lsign-key 4D47368BD660A1C7
 
-There is also a [web interface](https://eyl.io/aur/).
+There is also a [web interface](https://eyl.io/aur/) with the latest updates.
