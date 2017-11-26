@@ -1,4 +1,4 @@
-# eyl AUR
+# eyl.io AUR
 
 A personal Arch Linux User Repository
 
