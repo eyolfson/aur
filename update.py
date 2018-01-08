@@ -33,6 +33,7 @@ for d in os.listdir('.'):
         continue
     if d in skipped:
         continue
+    print(d)
     if d.endswith('-git') or d.endswith('-hg') or d in vcs_package:
         call(['makepkg', '-o', '-d'], cwd=d)
         rc = call(['git', 'diff', '--exit-code'])
