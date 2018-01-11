@@ -20,7 +20,7 @@ from subprocess import call
 
 skipped = {'sabnzbd', 'python2-pygments-style-solarized', 'eyl-launcher', 'teensy-tools', 'emacs-powerline', 'emacs-rich-minority', 'emacs-smart-mode-line'}
 
-vcs_package = {'sickbeard', 'oh-my-zsh', 'emacs-rust-mode', 'packer', 'firefox-pentadactyl', 'emacs-color-theme-solarized', 'prezto'}
+vcs_package = {'oh-my-zsh', 'emacs-rust-mode', 'packer', 'firefox-pentadactyl', 'emacs-color-theme-solarized', 'prezto'}
 
 for arg in sys.argv[1:]:
     skipped.add(arg)
