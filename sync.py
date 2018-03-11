@@ -19,7 +19,7 @@ import shutil
 from subprocess import call
 
 PKG_EXTENSION = '.pkg.tar.xz'
-ARCHS = ('i686', 'x86_64', 'armv7h')
+ARCHS = ('x86_64', 'armv7h')
 
 def pkg_split(s):
     return s[:-len(PKG_EXTENSION)].rsplit(sep='-', maxsplit=3)
