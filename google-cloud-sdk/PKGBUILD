@@ -6,13 +6,12 @@
 # Contributor: Justin Dray <justin@dray.be>
 
 pkgname="google-cloud-sdk"
-pkgver=213.0.0
+pkgver=214.0.0
 pkgrel=1
 pkgdesc="A set of command-line tools for the Google Cloud Platform. Includes gcloud (with beta and alpha commands), gsutil, and bq."
 url="https://cloud.google.com/sdk/"
 license=("Apache")
 arch=('x86_64')
-conflicts=("google-cloud-sdk-minimal")
 depends=('python2')
 optdepends=('python2-crcmod: [gsutil] verify the integrity of GCS object contents')
 options=('!strip' 'staticlibs')
@@ -22,7 +21,7 @@ source=(
   "google-cloud-sdk.sh"
 )
 sha256sums=(
-  '604d13879812bfc79879d845714211f36611d38740e6621c27f390736b43b648'
+  'f7c2720792aa8f819d553746d5ecdcd5df4a317129908e55d9da9d6bf3839379'
   '36ac88de630e49ea4b067b1f5f229142e4cf97561b98b3bd3d8115a356946692'
 )
 
@@ -94,13 +93,13 @@ package() {
 
   msg2 "Creating symlinks for applications"
   mkdir -p "${pkgdir}/usr/bin"
-  find "${pkgdir}/opt/${pkgname}/bin" -maxdepth 1 -type f -printf \
-    "/opt/${pkgname}/bin/%f\n" | xargs ln -st "${pkgdir}/usr/bin"
+  for i in "${pkgdir}/opt/${pkgname}/bin"/*; do
+    ln -st "${pkgdir}/usr/bin/" "${i#${pkgdir}}"
+  done
   rm -f "${pkgdir}"/usr/bin/{bq,dev_appserver.py*,endpointscfg.py*,java_dev_appserver.sh}
 
   msg2 "Fixing file permissions"
   chmod -x "${pkgdir}"/usr/share/man/man1/*
-  find "${pkgdir}/opt/${pkgname}" -name "*.html" -print0 | xargs -0 chmod -x
-  find "${pkgdir}/opt/${pkgname}" -name "*.json" -print0 | xargs -0 chmod -x
-  find "${pkgdir}/opt/${pkgname}" -name "*_test.py" -print0 | xargs -0 chmod +x
+  find "${pkgdir}/opt/${pkgname}" -name "*.html" -o -name "*.json" -exec chmod -x {} \;
+  find "${pkgdir}/opt/${pkgname}" -name "*_test.py" -exec chmod +x {} \;
 }
