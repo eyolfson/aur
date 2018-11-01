@@ -55,5 +55,5 @@ for arg in sys.argv[1:]:
             os.remove(sig_path)
             call(['ssh', 'site-eyl@eyl.io', 'aursetunavailable', pkg_name, pkg_arch])
 
-call(['fusermount', '-u', AUR_DIR])
+call(['fusermount3', '-u', AUR_DIR])
 os.rmdir(AUR_DIR)
