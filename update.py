@@ -40,7 +40,7 @@ for d in os.listdir('.'):
         if rc != 0:
             break
     else:
-        call(['wget', 'https://aur.archlinux.org/cgit/aur.git/snapshot/{}.tar.gz'.format(d)])
+        call(['wget', '-q', 'https://aur.archlinux.org/cgit/aur.git/snapshot/{}.tar.gz'.format(d)])
         call(['rm', '-f', '-r', d])
         call(['tar', 'xzvf', '{}.tar.gz'.format(d)])
         call(['rm', '-f', '{}.tar.gz'.format(d)])
