@@ -42,7 +42,7 @@ for d in os.listdir('.'):
     else:
         call(['wget', '-q', 'https://aur.archlinux.org/cgit/aur.git/snapshot/{}.tar.gz'.format(d)])
         call(['rm', '-f', '-r', d])
-        call(['tar', 'xzvf', '{}.tar.gz'.format(d)])
+        call(['tar', 'xzf', '{}.tar.gz'.format(d)])
         call(['rm', '-f', '{}.tar.gz'.format(d)])
         call(['rm', '-f', '{}/.AURINFO'.format(d)])
         call(['rm', '-f', '{}/.SRCINFO'.format(d)])
