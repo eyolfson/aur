@@ -24,7 +24,7 @@ build() {
 }
 
 package_python-pluginloader() {
-  depends=("python2")
+  depends=("python")
   cd "$srcdir/$pkgbase-$pkgver"
   python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
 }
