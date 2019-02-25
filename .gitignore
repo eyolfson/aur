@@ -3,3 +3,5 @@
 /*/*.pkg.tar.xz.sig
 !/aur.archlinux.org/*/
 !/personal/*/
+/personal/*/pkg/
+/personal/*/src/

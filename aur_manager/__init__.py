@@ -14,7 +14,7 @@ def run_command(args, cwd=None, show_commands=False):
     else:
         kwargs['stderr'] = subprocess.DEVNULL
         kwargs['stdout'] = subprocess.DEVNULL
-    subprocess.run(args, **kwargs)
+    return subprocess.run(args, **kwargs)
 
 def add(package, show_commands=False):
     url = ('https://aur.archlinux.org/cgit/aur.git/snapshot'
