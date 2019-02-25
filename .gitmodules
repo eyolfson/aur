@@ -1,24 +1,27 @@
-[submodule "aur.archlinux.org/emacs-evil"]
-	path = aur.archlinux.org/emacs-evil
-	url = git+ssh://aur@aur.archlinux.org/emacs-evil.git
-[submodule "aur.archlinux.org/emacs-rust-mode"]
-	path = aur.archlinux.org/emacs-rust-mode
-	url = git+ssh://aur@aur.archlinux.org/emacs-rust-mode.git
-[submodule "aur.archlinux.org/emacs-undo-tree"]
-	path = aur.archlinux.org/emacs-undo-tree
-	url = git+ssh://aur@aur.archlinux.org/emacs-undo-tree.git
-[submodule "aur.archlinux.org/emacs-yasnippet"]
-	path = aur.archlinux.org/emacs-yasnippet
-	url = git+ssh://aur@aur.archlinux.org/emacs-yasnippet.git
-[submodule "aur.archlinux.org/dynamorio"]
-	path = aur.archlinux.org/dynamorio
-	url = git+ssh://aur@aur.archlinux.org/dynamorio.git
-[submodule "aur.archlinux.org/pin"]
-	path = aur.archlinux.org/pin
-	url = git+ssh://aur@aur.archlinux.org/pin.git
-[submodule "aur.archlinux.org/emacs-helm"]
-	path = aur.archlinux.org/emacs-helm
-	url = git+ssh://aur@aur.archlinux.org/emacs-helm.git
-[submodule "aur.archlinux.org/emacs-async"]
-	path = aur.archlinux.org/emacs-async
-	url = ssh://aur@aur.archlinux.org/emacs-async.git
+[submodule "upstream/dynamorio"]
+	path = upstream/dynamorio
+	url = aur@aur.archlinux.org:dynamorio
+[submodule "upstream/emacs-async"]
+	path = upstream/emacs-async
+	url = aur@aur.archlinux.org:emacs-async
+[submodule "upstream/emacs-evil"]
+	path = upstream/emacs-evil
+	url = aur@aur.archlinux.org:emacs-evil
+[submodule "upstream/emacs-helm"]
+	path = upstream/emacs-helm
+	url = aur@aur.archlinux.org:emacs-helm
+[submodule "upstream/emacs-rust-mode"]
+	path = upstream/emacs-rust-mode
+	url = aur@aur.archlinux.org:emacs-rust-mode
+[submodule "upstream/emacs-undo-tree"]
+	path = upstream/emacs-undo-tree
+	url = aur@aur.archlinux.org:emacs-undo-tree
+[submodule "upstream/emacs-yasnippet"]
+	path = upstream/emacs-yasnippet
+	url = aur@aur.archlinux.org:emacs-yasnippet
+[submodule "upstream/pin"]
+	path = upstream/pin
+	url = aur@aur.archlinux.org:pin
+[submodule "upstream/python-pluginloader"]
+	path = upstream/python-pluginloader
+	url = aur@aur.archlinux.org:python-pluginloader
