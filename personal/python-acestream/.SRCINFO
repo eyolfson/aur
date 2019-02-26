@@ -1,0 +1,16 @@
+pkgbase = python-acestream
+	pkgdesc = Python interface to interact with the AceStream Engine and the HTTP API
+	pkgver = 0.1.5
+	pkgrel = 1
+	url = https://github.com/jonian/python-acestream
+	arch = any
+	license = GPL
+	makedepends = python-setuptools
+	depends = python
+	conflicts = python-acestream
+	conflicts = python-acestream-git
+	source = python-acestream-0.1.5.tar.gz::https://github.com/jonian/python-acestream/archive/v0.1.5.tar.gz
+	md5sums = 1c5afbd528873c4b9a0149693685decc
+
+pkgname = python-acestream
+
