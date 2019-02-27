@@ -1,0 +1,15 @@
+pkgbase = emacs-color-theme-solarized
+	pkgdesc = Emacs highlighting using Ethan Schoonover’s Solarized color scheme
+	pkgver = r375
+	pkgrel = 1
+	url = https://github.com/sellout/emacs-color-theme-solarized/
+	install = emacs-color-theme-solarized.install
+	arch = any
+	license = MIT
+	makedepends = git
+	depends = emacs
+	source = emacs-color-theme-solarized::git://github.com/sellout/emacs-color-theme-solarized.git
+	sha256sums = SKIP
+
+pkgname = emacs-color-theme-solarized
+
