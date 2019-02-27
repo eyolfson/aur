@@ -1,0 +1,37 @@
+# Maintainer: Moritz Lipp <mlq@pwmt.org>
+
+pkgname=grizzly-bear
+_pkgname=Bear
+pkgver=2.3.13
+pkgrel=1
+pkgdesc="tool to generate compilation database for clang tooling"
+arch=('i686' 'x86_64')
+url="https://github.com/eyolfson/Bear/tree/grizzly"
+license=('GPL3')
+makedepends=('cmake' 'ninja')
+depends=('python>=2.7')
+source=("https://github.com/eyolfson/$_pkgname/archive/$pkgver-grizzly.tar.gz")
+#md5sums=('879e8093b26ad903a3aa1a2a690e052e')
+sha1sums=('SKIP')
+
+prepare() {
+	cd "$srcdir/$_pkgname-$pkgver-grizzly"
+	mkdir -p build
+}
+
+build() {
+	cd "$srcdir/$_pkgname-$pkgver-grizzly/build"
+	cmake \
+		-GNinja \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_SYSCONFDIR=/etc \
+		-DCMAKE_BUILD_TYPE=plain \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		..
+	cmake --build . -- -v
+}
+
+package() {
+	cd "$srcdir/$_pkgname-$pkgver-grizzly/build"
+	DESTDIR="$pkgdir" cmake --build . -- -v install
+}

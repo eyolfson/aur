@@ -1,0 +1,16 @@
+pkgbase = grizzly-bear
+	pkgdesc = tool to generate compilation database for clang tooling
+	pkgver = 2.3.13
+	pkgrel = 1
+	url = https://github.com/eyolfson/Bear/tree/grizzly
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = cmake
+	makedepends = ninja
+	depends = python>=2.7
+	source = https://github.com/eyolfson/Bear/archive/2.3.13-grizzly.tar.gz
+	sha1sums = SKIP
+
+pkgname = grizzly-bear
+
