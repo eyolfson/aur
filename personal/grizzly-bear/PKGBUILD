@@ -3,7 +3,7 @@
 pkgname=grizzly-bear
 _pkgname=Bear
 pkgver=2.3.13
-pkgrel=1
+pkgrel=2
 pkgdesc="tool to generate compilation database for clang tooling"
 arch=('i686' 'x86_64')
 url="https://github.com/eyolfson/Bear/tree/grizzly"
