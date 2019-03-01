@@ -1,0 +1,19 @@
+pkgbase = teensy-tools
+	pkgdesc = Tools for Teensy development
+	pkgver = 2.1
+	pkgrel = 1
+	url = https://www.pjrc.com/teensy/loader_cli.html
+	arch = i686
+	arch = x86_64
+	license = GPLv3
+	depends = avr-binutils
+	depends = avr-gcc
+	depends = avr-libc
+	depends = libusb-compat
+	source = https://github.com/PaulStoffregen/teensy_loader_cli/archive/2.1.tar.gz
+	source = 49-teensy.rules
+	sha256sums = 5c36fe45b9a3a71ac38848b076cd692bf7ca8826a69941c249daac3a1d95e388
+	sha256sums = 9d1f8d89ea81bedbc1eadf535d5c0b1403e369917099b820072939e4d33ca800
+
+pkgname = teensy-tools
+
