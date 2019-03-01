@@ -2,7 +2,7 @@
 
 pkgname=grizzly-bear
 _pkgname=Bear
-pkgver=2.3.13.1
+pkgver=2.3.13
 pkgrel=1
 pkgdesc="tool to generate compilation database for clang tooling"
 arch=('i686' 'x86_64')
@@ -11,8 +11,7 @@ license=('GPL3')
 makedepends=('cmake' 'ninja')
 depends=('python>=2.7')
 source=("https://github.com/eyolfson/$_pkgname/archive/$pkgver-grizzly.tar.gz")
-#md5sums=('879e8093b26ad903a3aa1a2a690e052e')
-sha1sums=('SKIP')
+sha256sums=('1367df1c8e21e64b5a42dd60c2e1ecfb53db8c7e746e9791c6ef4033b9500be1')
 
 prepare() {
 	cd "$srcdir/$_pkgname-$pkgver-grizzly"
