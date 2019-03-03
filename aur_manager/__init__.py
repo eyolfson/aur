@@ -1,3 +1,19 @@
+#!/usr/bin/env python
+#
+# Copyright 2014-2019 Jon Eyolfson
+#
+# This program is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <http://www.gnu.org/licenses/>.
+
 import argparse
 import os
 import shutil
@@ -147,10 +163,36 @@ def sync(show_commands=False):
     if mounted:
         host_umount(show_commands=show_commands)
 
+def update(show_commands=False):
+    git_packages = ['emacs-color-theme-solarized',
+                    'emacs-rust-mode',
+                    'oh-my-zsh',
+                    'sway-git',
+                    'wlroots-git']
+    ignored_packages = ['grizzly-bear',
+                        'sabnzbd',
+                        'teensy-tools']
+    for pkg_name in sorted(os.listdir(PERSONAL_DIR)):
+        if pkg_name in ignored_packages:
+            continue
+        pkg_dir = os.path.join(PERSONAL_DIR, pkg_name)
+        if pkg_name in git_packages:
+            run_command(['rm', '-rf', 'pkg', 'src'],
+                        cwd=pkg_dir, show_commands=show_commands)
+            run_command(['makepkg', '-d', '-o'],
+                        cwd=pkg_dir, show_commands=show_commands)
+        else:
+            run_command(['rm', '-rf', pkg_name],
+                        cwd=PERSONAL_DIR, show_commands=show_commands)
+            add(pkg_name, show_commands=show_commands)
+            if pkg_name.endswith('-git'):
+                run_command(['makepkg', '-d', '-o'],
+                            cwd=pkg_dir, show_commands=show_commands)
+
 def main(args):
     parser = argparse.ArgumentParser(description='AUR Manager')
     parser.add_argument('--show-commands', action='store_true')
-    parser.add_argument('action', choices=['add', 'remove', 'sync'])
+    parser.add_argument('action', choices=['add', 'remove', 'sync', 'update'])
     parser.add_argument('packages', nargs=argparse.REMAINDER)
     parsed_args = parser.parse_args()
     if parsed_args.action == 'add':
@@ -162,3 +204,5 @@ def main(args):
                    show_commands=parsed_args.show_commands)
     elif parsed_args.action == 'sync':
         sync(show_commands=parsed_args.show_commands)
+    elif parsed_args.action == 'update':
+        update(show_commands=parsed_args.show_commands)
