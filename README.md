@@ -15,6 +15,7 @@ versions for my own use. I have a few official AUR packages including:
 - `emacs-undo-tree`
 - `emacs-yasnippet`
 - `pin`
+- `python-pluginloader`
 
 ## Usage
 
