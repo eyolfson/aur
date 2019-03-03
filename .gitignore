@@ -6,5 +6,6 @@
 !/personal/*/
 /personal/*/pkg/
 /personal/*/src/
+/personal/*/*.tar*
 /personal/hg-fast-export-git/fast-export/
 !/upstream/*/
