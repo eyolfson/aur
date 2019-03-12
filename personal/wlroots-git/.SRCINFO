@@ -1,6 +1,6 @@
 pkgbase = wlroots-git
 	pkgdesc = Modular Wayland compositor library
-	pkgver = 0.5.0.r0.gc9137cba
+	pkgver = 0.5.0.r1.g408eca7d
 	pkgrel = 1
 	url = https://github.com/swaywm/wlroots
 	arch = x86_64
