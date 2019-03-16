@@ -1,6 +1,6 @@
 pkgbase = sway-git
 	pkgdesc = i3-compatible Wayland compositor
-	pkgver = r5809.e687e120
+	pkgver = r5813.73605dac
 	pkgrel = 1
 	url = https://swaywm.org
 	arch = i686
