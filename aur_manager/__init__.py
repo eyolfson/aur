@@ -29,15 +29,29 @@ PKG_EXTENSION = '.pkg.tar.xz'
 def pkg_split(s):
     return s[:-len(PKG_EXTENSION)].rsplit(sep='-', maxsplit=3)
 
-def run_command(args, cwd=None, show_commands=False):
-    kwargs = {'check': True}
+def run_command(args,
+                cwd=None,
+                show_commands=False,
+                stderr=None,
+                stdout=None,
+                text=False):
+    kwargs = {
+        'check': True,
+        'text': text,
+    }
     if cwd is not None:
         kwargs['cwd'] = cwd
     if show_commands:
         print('\x1b[1m{}\x1b[m'.format(' '.join(args)))
     else:
-        kwargs['stderr'] = subprocess.DEVNULL
-        kwargs['stdout'] = subprocess.DEVNULL
+        if stderr is None:
+            kwargs['stderr'] = subprocess.DEVNULL
+        if stdout is None:
+            kwargs['stdout'] = subprocess.DEVNULL
+    if not 'stderr' in kwargs:
+        kwargs['stderr'] = stderr
+    if not 'stdout' in kwargs:
+        kwargs['stdout'] = stdout
     return subprocess.run(args, **kwargs)
 
 def host_mount(show_commands=False):
@@ -185,9 +199,15 @@ def update(show_commands=False):
             run_command(['rm', '-rf', pkg_name],
                         cwd=PERSONAL_DIR, show_commands=show_commands)
             add(pkg_name, show_commands=show_commands)
-            if pkg_name.endswith('-git'):
+            if pkg_name.endswith('-git') or pkg_name == 'i3lock-wrapper':
                 run_command(['makepkg', '-d', '-o'],
                             cwd=pkg_dir, show_commands=show_commands)
+
+        p = run_command(['makepkg', '--printsrcinfo'],
+                        cwd=pkg_dir, show_commands=show_commands,
+                        stdout=subprocess.PIPE, text=True)
+        with open(os.path.join(pkg_dir, '.SRCINFO'), 'w') as f:
+            f.write(p.stdout)
 
 def main(args):
     parser = argparse.ArgumentParser(description='AUR Manager')
