@@ -11,6 +11,7 @@ versions for my own use. I have a few official AUR packages including:
 - `emacs-async`
 - `emacs-evil`
 - `emacs-helm`
+- `emacs-helm-ls-git`
 - `emacs-rust-mode`
 - `emacs-undo-tree`
 - `emacs-yasnippet`
