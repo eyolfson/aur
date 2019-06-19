@@ -9,5 +9,6 @@
 /personal/*/*.tar*
 /personal/hg-fast-export-git/fast-export/
 /personal/i3lock-wrapper/i3-extras
+/personal/spotify/spotify-*
 /personal/unifi/*.zip
 !/upstream/*/
