@@ -1,5 +1,5 @@
 pkgbase = plex-media-server
-	pkgdesc = Plex Media Server
+	pkgdesc = The back-end media server component of Plex.
 	pkgver = 1.16.0.1226
 	pkgrel = 1
 	url = https://plex.tv/
