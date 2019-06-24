@@ -1,0 +1,30 @@
+pkgbase = skypeforlinux-preview-bin
+	pkgdesc = Skype for Linux - Preview/Insider Version
+	pkgver = 8.48.76.52
+	pkgrel = 1
+	url = http://www.skype.com
+	arch = x86_64
+	license = custom
+	makedepends = asar
+	depends = gtk3
+	depends = libxss
+	depends = gconf
+	depends = alsa-lib
+	depends = libxtst
+	depends = libsecret
+	depends = nss
+	depends = glibc>=2.28-4
+	optdepends = gnome-keyring
+	provides = skypeforlinux
+	provides = skype
+	conflicts = skypeforlinux
+	conflicts = skypeforlinux-bin
+	conflicts = skypeforlinux-stable-bin
+	conflicts = skypeforlinux-beta-bin
+	conflicts = skype
+	replaces = skypeforlinux-bin
+	source = https://repo.skype.com/deb/pool/main/s/skypeforlinux/skypeforlinux_8.48.76.52_amd64.deb
+	sha256sums = 87151340bdafac18a92bf975ac4304e99b6152ca637ab04cf32bb7a83e4d8bed
+
+pkgname = skypeforlinux-preview-bin
+
