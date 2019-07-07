@@ -4,7 +4,7 @@ A personal Arch Linux User Repository
 
 ## Description
 
-Most packages match up with the ones in the offical AUR. Some are stripped down
+Most packages match the ones in the offical AUR. Some are stripped down
 versions for my own use (`sabnzbd`). I have a few official AUR packages
 including:
 
