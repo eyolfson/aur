@@ -1,6 +1,6 @@
 # Maintainer: Adrian Perez de Castro <aperez@igalia.com>
 pkgname='wlroots-git'
-pkgver=0.7.0.r8.g020a33e0
+pkgver=0.7.0.r13.gb1b93c2c
 pkgrel=1
 license=('custom:MIT')
 pkgdesc='Modular Wayland compositor library'
