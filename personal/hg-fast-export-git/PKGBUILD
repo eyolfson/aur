@@ -5,7 +5,7 @@
 
 pkgname=hg-fast-export-git
 _pkgname='fast-export'
-pkgver=r466.0096085
+pkgver=r469.02c54a5
 pkgrel=1
 pkgdesc="A mercurial to git converter using git-fast-import."
 arch=('any')
