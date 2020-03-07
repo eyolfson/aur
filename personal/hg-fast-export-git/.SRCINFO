@@ -1,6 +1,6 @@
 pkgbase = hg-fast-export-git
 	pkgdesc = A mercurial to git converter using git-fast-import.
-	pkgver = r502.56da628
+	pkgver = r504.afeb58a
 	pkgrel = 1
 	url = http://repo.or.cz/w/fast-export.git
 	arch = any
