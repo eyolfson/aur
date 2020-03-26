@@ -1,6 +1,6 @@
 pkgbase = oh-my-zsh
 	pkgdesc = A community-driven framework for managing your zsh configuration. Includes 180+ optional plugins and over 120 themes to spice up your morning, and an auto-update tool so that makes it easy to keep up with the latest updates from the community
-	pkgver = r5606
+	pkgver = r5610
 	pkgrel = 1
 	url = https://github.com/robbyrussell/oh-my-zsh
 	arch = any
