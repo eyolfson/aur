@@ -1,7 +1,7 @@
 # Maintainer: Drew DeVault <sir@cmpwn.com>
 pkgname=sway-git
 _pkgname=sway
-pkgver=r6442.9bb70283
+pkgver=r6443.4dd46f06
 pkgrel=1
 license=("MIT")
 pkgdesc="i3-compatible Wayland compositor"
