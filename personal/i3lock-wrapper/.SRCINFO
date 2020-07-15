@@ -1,6 +1,6 @@
 pkgbase = i3lock-wrapper
 	pkgdesc = A simple wrapper around i3lock which blurs the current desktop
-	pkgver = 2018.05.15.g49889ca
+	pkgver = 2020.07.15.ga652716
 	pkgrel = 1
 	url = https://github.com/ashinkarov/i3-extras/
 	arch = any

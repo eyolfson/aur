@@ -2,7 +2,7 @@
 
 pkgname=i3lock-wrapper
 _gitname=i3-extras
-pkgver=2018.05.15.g49889ca
+pkgver=2020.07.15.ga652716
 pkgrel=1
 pkgdesc='A simple wrapper around i3lock which blurs the current desktop'
 arch=('any')
