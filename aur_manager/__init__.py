@@ -24,7 +24,7 @@ HOST_DIR = os.path.join(BASE_DIR, 'host')
 PERSONAL_DIR = os.path.join(BASE_DIR, 'personal')
 
 ARCHS = ('x86_64', 'armv7h')
-PKG_EXTENSION = '.pkg.tar.xz'
+PKG_EXTENSION = '.pkg.tar.zst'
 
 def pkg_split(s):
     return s[:-len(PKG_EXTENSION)].rsplit(sep='-', maxsplit=3)
