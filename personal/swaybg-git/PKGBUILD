@@ -24,17 +24,16 @@ pkgver() {
     printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
-prepare() {
-    cd "${srcdir}/${_pkgname}"
-    meson -Dwerror=false --prefix /usr "$srcdir/build"
-}
 
 build() {
-    cd "${srcdir}/${_pkgname}"
-    ninja -C "$srcdir/build"
+  arch-meson "${_pkgname}" build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build
 }
 
 package() {
-    cd "${srcdir}/${_pkgname}"
-    DESTDIR="$pkgdir/" ninja -C "$srcdir/build" install
+  DESTDIR="$pkgdir" meson install -C build
 }
