@@ -1,0 +1,20 @@
+# Maintainer: Jon Eyolfson <jon@eyl.io>
+pkgname=emacs-queue
+pkgver=0.2.1
+pkgrel=1
+pkgdesc="A implement of queues for Emacs"
+arch=('any')
+url="3605a92ec00a24e225aebd35ef6dfde2475477bce864bad1e410e3a3364148d5"
+depends=('emacs')
+license=('GPL')
+source=('https://www.dr-qubit.org/predictive/queue.el')
+sha256sums=('3605a92ec00a24e225aebd35ef6dfde2475477bce864bad1e410e3a3364148d5')
+
+build() {
+  emacs -batch -f batch-byte-compile queue.el
+}
+
+package() {
+  install -d $pkgdir/usr/share/emacs/site-lisp/undo-tree
+  install -m644 *.el{c,} "${pkgdir}/usr/share/emacs/site-lisp/undo-tree"
+}
