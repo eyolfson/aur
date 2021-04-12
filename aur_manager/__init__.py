@@ -180,11 +180,11 @@ def sync(show_commands=False):
 def update(show_commands=False):
     git_packages = ['emacs-color-theme-solarized',
                     'emacs-rust-mode',
-                    'emacs-queue',
                     'oh-my-zsh',
                     'sway-git',
                     'wlroots-git']
-    ignored_packages = ['grizzly-bear',
+    ignored_packages = ['emacs-queue',
+                        'grizzly-bear',
                         'sabnzbd',
                         'teensy-tools']
     for pkg_name in sorted(os.listdir(PERSONAL_DIR)):
