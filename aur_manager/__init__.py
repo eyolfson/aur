@@ -180,6 +180,7 @@ def sync(show_commands=False):
 def update(show_commands=False):
     git_packages = ['emacs-color-theme-solarized',
                     'emacs-rust-mode',
+                    'emacs-queue',
                     'oh-my-zsh',
                     'sway-git',
                     'wlroots-git']
