@@ -59,6 +59,14 @@ build() {
   python setup.py build
 }
 
+check() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+  PYTHONPATH="${PWD}/build/lib.linux-${CARCH}-$(get_pyver)" pytest -v
+  
+  cd "${srcdir}/${_pkgname}-cuda-${pkgver}"
+  PYTHONPATH="${PWD}/build/lib.linux-${CARCH}-$(get_pyver)" pytest -v
+}
+
 package_python-torchvision() {
   depends+=(python-pytorch)
 
