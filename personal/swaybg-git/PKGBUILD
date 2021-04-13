@@ -1,7 +1,7 @@
 # Maintainer: Taran Lynn <taranlynn0gmail.com>
 pkgname=swaybg-git
 _pkgname=swaybg
-pkgver=r95.a8f109a
+pkgver=r96.808a226
 pkgrel=1
 license=("MIT")
 pkgdesc="Wallpaper tool for Wayland compositors"
