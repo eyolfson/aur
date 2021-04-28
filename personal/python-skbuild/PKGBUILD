@@ -1,0 +1,21 @@
+# Maintainer: Jon Eyolfson <eyolfson@gmail.com>
+pkgname=python-skbuild
+pkgver=0.11.1
+pkgrel=1
+pkgdesc="Improved build system generator for CPython C/C++/Fortran/Cython extensions"
+arch=('any')
+url="https://github.com/scikit-build/scikit-build"
+license=('MIT')
+makedepends=('python-setuptools')
+source=("https://github.com/scikit-build/scikit-build/archive/refs/tags/$pkgver.tar.gz")
+sha512sums=('311e77d5fb8cc86e8157e1e5fb6aed9ae43a737e091a3902550064705127f1bf21d100bbdca6d74d6e7454e61023b1853c249a5bb927ffd434ac344e0d1e33af')
+
+build() {
+    cd "$srcdir/scikit-build-$pkgver"
+    python setup.py build
+}
+
+package() {
+    cd "$srcdir/scikit-build-$pkgver"
+    python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}
