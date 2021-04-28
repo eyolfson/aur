@@ -1,12 +1,15 @@
 # Maintainer: Jon Eyolfson <eyolfson@gmail.com>
 pkgname=python-ninja
 pkgver=1.10.0.post2
-pkgrel=1
+pkgrel=2
 pkgdesc="Python wrapper for ninja"
-arch=('any')
+arch=('x86_64')
 url="https://github.com/scikit-build/ninja-python-distributions"
 license=('Apache')
 makedepends=('python-setuptools' 'python-skbuild')
+provides=('ninja')
+conflicts=('ninja')
+replaces=('ninja')
 source=("https://github.com/scikit-build/ninja-python-distributions/archive/refs/tags/$pkgver.tar.gz")
 sha512sums=('8e1bac7b9df2b611b654eff17daf4416a9ef6ddebd8ee5355549ee3947c162447a2cd9b66852a4ffd26f9e4d466d259a6184babd987b3c4495d0718adb54eb8c')
 
