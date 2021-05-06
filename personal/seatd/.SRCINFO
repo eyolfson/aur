@@ -1,0 +1,20 @@
+pkgbase = seatd
+	pkgdesc = Seat management daemon and library
+	pkgver = 0.5.0
+	pkgrel = 1
+	url = https://git.sr.ht/~kennylevinsen/seatd
+	arch = x86_64
+	license = MIT
+	makedepends = meson
+	makedepends = ninja
+	makedepends = scdoc
+	depends = systemd
+	provides = seatd
+	provides = libseat
+	conflicts = seatd
+	conflicts = libseat
+	source = https://git.sr.ht/~kennylevinsen/seatd/archive/0.5.0.tar.gz
+	sha256sums = 274b56324fc81ca6002bc1cdd387668dee34a6e1063e5f3896805c3770948988
+
+pkgname = seatd
+
