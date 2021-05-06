@@ -1,6 +1,7 @@
 # Maintainer: Jon Eyolfson <jon@eyl.io>
 pkgname=emacs-rust-mode
-pkgver=r472
+_emacs_pkgname=rust-mode
+pkgver=r486
 pkgrel=1
 pkgdesc="A major Emacs mode for editing Rust source code"
 arch=('any')
@@ -18,11 +19,11 @@ pkgver() {
 
 build() {
   cd "$srcdir/$pkgname"
-  emacs -batch -f batch-byte-compile rust-mode.el
+  make
 }
 
 package() {
-  install -d $pkgdir/usr/share/emacs/site-lisp
   cd "$srcdir/$pkgname"
-  cp rust-mode.{el,elc} $pkgdir/usr/share/emacs/site-lisp
+  install -d "${pkgdir}/usr/share/emacs/site-lisp/${_emacs_pkgname}"
+  install -m644 *.el{c,} "${pkgdir}/usr/share/emacs/site-lisp/${_emacs_pkgname}"
 }
