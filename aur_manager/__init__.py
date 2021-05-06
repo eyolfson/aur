@@ -177,7 +177,7 @@ def sync(show_commands=False):
     if mounted:
         host_umount(show_commands=show_commands)
 
-def update(show_commands=False):
+def update(show_commands=False, skipped_packages=[]):
     git_packages = ['emacs-color-theme-solarized',
                     'emacs-rust-mode',
                     'oh-my-zsh',
@@ -188,6 +188,8 @@ def update(show_commands=False):
                         'sabnzbd',
                         'teensy-tools']
     for pkg_name in sorted(os.listdir(PERSONAL_DIR)):
+        if pkg_name in skipped_packages:
+            continue
         if pkg_name in ignored_packages:
             continue
         pkg_dir = os.path.join(PERSONAL_DIR, pkg_name)
@@ -226,4 +228,5 @@ def main(args):
     elif parsed_args.action == 'sync':
         sync(show_commands=parsed_args.show_commands)
     elif parsed_args.action == 'update':
-        update(show_commands=parsed_args.show_commands)
+        update(show_commands=parsed_args.show_commands,
+               skipped_packages=parsed_args.packages)
