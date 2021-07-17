@@ -14,4 +14,3 @@ pkgbase = pdsh
 	md5sums = 75916c61a469303ff859605b1375d391
 
 pkgname = pdsh
-
