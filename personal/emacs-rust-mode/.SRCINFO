@@ -11,4 +11,3 @@ pkgbase = emacs-rust-mode
 	sha256sums = SKIP
 
 pkgname = emacs-rust-mode
-
