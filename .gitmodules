@@ -19,9 +19,6 @@
 [submodule "upstream/emacs-yasnippet"]
 	path = upstream/emacs-yasnippet
 	url = aur@aur.archlinux.org:emacs-yasnippet
-[submodule "upstream/pin"]
-	path = upstream/pin
-	url = aur@aur.archlinux.org:pin
 [submodule "upstream/python-pluginloader"]
 	path = upstream/python-pluginloader
 	url = aur@aur.archlinux.org:python-pluginloader
