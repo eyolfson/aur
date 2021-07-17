@@ -38,4 +38,3 @@ pkgbase = lidarr
 	sha512sums_armv7h = 7498be08221dc6166ca795591e0d498ecedcecfa475339bc1c4ae445f3b98cecbb00ff4f5398d497f958fd9f12afe0804990b3063529a70d1d6cffa4a9001e7c
 
 pkgname = lidarr
-
