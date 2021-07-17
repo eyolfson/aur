@@ -13,4 +13,3 @@ pkgbase = hg-fast-export-git
 	sha512sums = SKIP
 
 pkgname = hg-fast-export-git
-
