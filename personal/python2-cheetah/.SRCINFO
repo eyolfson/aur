@@ -13,4 +13,3 @@ pkgbase = python2-cheetah
 	sha512sums = 11b8cbf7d71789d6ae83596b133ddbe0bf1ccf2bca4c59562e7cd1d9bb75fa9d3208c0021d7d77edafdb03fd399cf1a26c003267fbffb94f27bf4457b0f9234c
 
 pkgname = python2-cheetah
-
