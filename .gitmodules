@@ -13,6 +13,3 @@
 [submodule "upstream/python-pluginloader"]
 	path = upstream/python-pluginloader
 	url = aur@aur.archlinux.org:python-pluginloader
-[submodule "upstream/emacs-helm-ls-git"]
-	path = upstream/emacs-helm-ls-git
-	url = aur@aur.archlinux.org:emacs-helm-ls-git
