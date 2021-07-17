@@ -15,4 +15,3 @@ pkgname = python-pluginloader
 
 pkgname = python2-pluginloader
 	depends = python2
-
