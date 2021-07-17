@@ -1,6 +1,3 @@
-[submodule "upstream/dynamorio"]
-	path = upstream/dynamorio
-	url = aur@aur.archlinux.org:dynamorio
 [submodule "upstream/emacs-async"]
 	path = upstream/emacs-async
 	url = aur@aur.archlinux.org:emacs-async
