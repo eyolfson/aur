@@ -14,4 +14,3 @@ pkgbase = emacs-undo-tree
 	sha256sums = SKIP
 
 pkgname = emacs-undo-tree
-
