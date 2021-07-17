@@ -13,4 +13,3 @@ pkgbase = emacs-async
 	sha256sums = eadd291e75dd05aa1a0c7199ecc936b8c18b7981220612cb018f4c2ad0ba0c9d
 
 pkgname = emacs-async
-
