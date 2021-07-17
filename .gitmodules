@@ -1,9 +1,6 @@
 [submodule "upstream/emacs-evil"]
 	path = upstream/emacs-evil
 	url = aur@aur.archlinux.org:emacs-evil
-[submodule "upstream/emacs-helm"]
-	path = upstream/emacs-helm
-	url = aur@aur.archlinux.org:emacs-helm
 [submodule "upstream/emacs-rust-mode"]
 	path = upstream/emacs-rust-mode
 	url = aur@aur.archlinux.org:emacs-rust-mode
