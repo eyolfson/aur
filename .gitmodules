@@ -7,9 +7,6 @@
 [submodule "upstream/emacs-undo-tree"]
 	path = upstream/emacs-undo-tree
 	url = aur@aur.archlinux.org:emacs-undo-tree
-[submodule "upstream/emacs-yasnippet"]
-	path = upstream/emacs-yasnippet
-	url = aur@aur.archlinux.org:emacs-yasnippet
 [submodule "upstream/python-pluginloader"]
 	path = upstream/python-pluginloader
 	url = aur@aur.archlinux.org:python-pluginloader
