@@ -1,6 +1,3 @@
-[submodule "upstream/emacs-async"]
-	path = upstream/emacs-async
-	url = aur@aur.archlinux.org:emacs-async
 [submodule "upstream/emacs-evil"]
 	path = upstream/emacs-evil
 	url = aur@aur.archlinux.org:emacs-evil
