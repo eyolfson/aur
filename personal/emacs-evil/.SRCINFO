@@ -11,4 +11,3 @@ pkgbase = emacs-evil
 	sha256sums = 5fcf711112597aa6d80f3fac798ed150c956b4c27fa74c8260aab915c6080199
 
 pkgname = emacs-evil
-
