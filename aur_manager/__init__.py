@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HOST_DIR = os.path.join(BASE_DIR, 'host')
 PERSONAL_DIR = os.path.join(BASE_DIR, 'personal')
 
-ARCHS = ('x86_64')
+ARCHS = ('x86_64',)
 PKG_EXTENSION = '.pkg.tar.zst'
 DATABASE_FILE = 'eyl.db.tar.xz'
 
