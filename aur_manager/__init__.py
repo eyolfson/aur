@@ -25,6 +25,7 @@ PERSONAL_DIR = os.path.join(BASE_DIR, 'personal')
 
 ARCHS = ('x86_64')
 PKG_EXTENSION = '.pkg.tar.zst'
+DATABASE_FILE = 'eyl.db.tar.zst'
 
 def pkg_split(s):
     return s[:-len(PKG_EXTENSION)].rsplit(sep='-', maxsplit=3)
@@ -118,7 +119,7 @@ def remove(package, repo_remove=True, show_commands=False):
         if len(arch_package_files) == 0:
             continue
         if repo_remove:
-            run_command(['repo-remove', '-s', '-v', 'eyl.db.tar.xz', package],
+            run_command(['repo-remove', '-s', '-v', DATABASE_FILE, package],
                         cwd=arch_dir, show_commands=show_commands)
         if repo_remove and not has_any_arch:
             run_command(['ssh', 'site-eyl@eyl.io', 'aursetunavailable',
@@ -153,7 +154,7 @@ def sync(show_commands=False):
         run_command(['mv', pkg_file, pkg_arch_dir], show_commands=show_commands)
         run_command(['mv', sig_file, pkg_arch_dir], show_commands=show_commands)
         if pkg_arch != 'any':
-            run_command(['repo-add', '-s', '-v', 'eyl.db.tar.xz', pkg_basename],
+            run_command(['repo-add', '-s', '-v', DATABASE_FILE, pkg_basename],
                         cwd=pkg_arch_dir,
                         show_commands=show_commands)
         else:
@@ -167,7 +168,7 @@ def sync(show_commands=False):
                              sig_basename],
                             cwd=arch_dir,
                             show_commands=show_commands)
-                run_command(['repo-add', '-s', '-v', 'eyl.db.tar.xz', pkg_basename],
+                run_command(['repo-add', '-s', '-v', DATABASE_FILE, pkg_basename],
                             cwd=arch_dir,
                             show_commands=show_commands)
 
