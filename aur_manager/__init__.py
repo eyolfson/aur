@@ -25,7 +25,7 @@ PERSONAL_DIR = os.path.join(BASE_DIR, 'personal')
 
 ARCHS = ('x86_64')
 PKG_EXTENSION = '.pkg.tar.zst'
-DATABASE_FILE = 'eyl.db.tar.zst'
+DATABASE_FILE = 'eyl.db.tar.xz'
 
 def pkg_split(s):
     return s[:-len(PKG_EXTENSION)].rsplit(sep='-', maxsplit=3)
