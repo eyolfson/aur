@@ -1,7 +1,0 @@
-pkg/
-src/
-*.tar
-*.tar.*
-*.deb
-*.rpm
-*.[gx]z
